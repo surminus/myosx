@@ -3,18 +3,16 @@
 require 'yaml'
 require 'git'
 require 'fileutils'
-require_relative 'workspace'
+require_relative 'core'
 
 class Dotfiles
   def initialize
-    @global_config = YAML.load_file('config/config.yaml')
-    @config = @global_config['dotfiles']
-    @workspace = Workspace.new.directory
+    Core.new
+    @config = $global_config['dotfiles']
   end
 
-
   def dotfiledir
-    File.join(@workspace, 'dotfiles')
+    File.join($workspace, 'dotfiles')
   end
 
   def repo
@@ -22,7 +20,7 @@ class Dotfiles
     if Git.ls_remote(dotfile_repo)
       unless File.exist?(dotfiledir)
         puts "Cloning #{dotfile_repo}"
-        Git.clone(dotfile_repo, 'dotfiles', :path => @workspace)
+        Git.clone(dotfile_repo, 'dotfiles', :path => $workspace)
       else
         g = Git.init(dotfiledir)
         puts "Pulling latest #{dotfile_repo}"
