@@ -1,0 +1,14 @@
+---
+# This creates the workspace directory
+workspace: ".osx-setup"
+
+# The repo for your dotfile config
+dotfile_repo: 'https://github.com/surminus/dotfiles'
+
+# Which dotfiles to manage: these should represent the filenames found in the
+# repo and will be created in the users home.
+dotfiles:
+  - ackrc
+  - gitconfig
+  - vimrc
+  - zshrc
