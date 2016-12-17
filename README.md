@@ -8,7 +8,9 @@ myosx bootstraps my OSX install how I like it.
 
 ## Usage
 
-TODO: Write usage instructions here
+Notes on how to test before it's a gem. Clone repo and from inside:
+
+`RUBYLIB=$(pwd)/lib bin/myosx`
 
 ## Development
 
