@@ -7,14 +7,18 @@ class Workspace
     @config = YAML.load_file('config/config.yaml')
   end
 
-  def create
+  def directory
     workspace_dir_name = @config['workspace']
-    workspace_dir = File.join(Dir.home, workspace_dir_name)
+    return File.join(Dir.home, workspace_dir_name)
+  end
 
-    unless Dir.exists?("#{workspace_dir}")
-      puts "Creating workspace: #{workspace_dir}"
-      Dir.mkdir("#{workspace_dir}", 0750)
+
+  def create
+    unless Dir.exists?(directory)
+      puts "Creating workspace: #{directory}"
+      Dir.mkdir("#{directory}", 0750)
     end
   end
+
 end
 
