@@ -41,4 +41,11 @@ class Homebrew
     puts "Installing packages from #{brewfile}"
     system("brew bundle --file=#{brewfile}")
   end
+
+  def exec
+    if @config['manage']
+      install
+      bundle
+    end
+  end
 end

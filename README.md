@@ -1,6 +1,6 @@
 # Myosx
 
-myosx bootstraps my OSX install how I like it.
+myosx configures osx how I like it.
 
 ## Installation
 
@@ -11,6 +11,15 @@ myosx bootstraps my OSX install how I like it.
 Notes on how to test before it's a gem. Clone repo and from inside:
 
 `RUBYLIB=$(pwd)/lib bin/myosx`
+
+## To-do
+
+Loads of stuff.
+
+ - Create files in library for ideas on what to manage
+ - Ideally the config file should be ~/.myosx.yaml or something
+ - usage should be install gem, create config, `$ myosx`
+ - tests
 
 ## Development
 

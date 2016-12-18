@@ -7,9 +7,8 @@ module Myosx
   class Bootstrap
     def initialize
       Workspace.new.create
-      Dotfiles.new.link
-      Homebrew.new.install
-      Homebrew.new.bundle
+      Dotfiles.new.exec
+      Homebrew.new.exec
     end
   end
 end
