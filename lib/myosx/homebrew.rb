@@ -31,10 +31,12 @@ class Homebrew
     packages = @config['packages']
     brew_packages = packages['brew']
     tap_packages = packages['tap']
+    cask_packages = packages['cask']
 
     File.open(File.join($workspace, 'Brewfile'), "w+") do |f|
       brew_packages.each { |p| f.puts "brew '#{p}'" }
       tap_packages.each { |p| f.puts "tap '#{p}'" }
+      cask_packages.each { |p| f.puts "cask '#{p}'" }
     end
     brewfile = File.join($workspace, 'Brewfile')
 
