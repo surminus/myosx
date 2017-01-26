@@ -2,9 +2,12 @@
 
 myosx configures osx how I like it.
 
-## Installation
+## Setup
 
-    $ gem install myosx
+1. Install XCode
+2. [Install homebrew](http://brew.sh/)
+3. `brew install imagemagick`
+4. `bundle install`
 
 ## Usage
 

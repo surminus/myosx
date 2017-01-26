@@ -13,18 +13,6 @@ class Homebrew
     @config = $global_config['homebrew']
   end
 
-  def install
-    unless `which brew`
-      puts "Installing homebrew"
-      Git.clone('https://github.com/Homebrew/install',
-                'homebrew-install',
-                :path => $workspace)
-      dir = File.join($workspace, 'homebrew-install')
-      install_script = File.join(dir, 'install')
-      system("ruby", install_script)
-    end
-  end
-
   def bundle
     system("brew tap Homebrew/bundle")
     puts "Updating Brewfile"
@@ -46,7 +34,6 @@ class Homebrew
 
   def exec
     if @config['manage']
-      install
       bundle
     end
   end
