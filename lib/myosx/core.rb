@@ -8,7 +8,9 @@ require_relative 'workspace'
 
 class Core
   def initialize
-    $global_config = YAML.load_file('config/config.yaml')
+    config_file = File.expand_path('~/.myosx.cnf')
+    raise "Cannot find config file: #{config_file}" unless File.exist?(config_file)
+    $global_config = YAML.load_file(config_file)
     $workspace = Workspace.new.directory
   end
 end

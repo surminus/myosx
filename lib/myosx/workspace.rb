@@ -4,7 +4,7 @@ require 'yaml'
 
 class Workspace
   def initialize
-    @config = YAML.load_file('config/config.yaml')
+    @config = YAML.load_file(File.expand_path('~/.myosx.cnf'))
   end
 
   def directory
