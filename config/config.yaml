@@ -7,10 +7,10 @@ dotfiles:
   manage: true
   repo: 'https://github.com/surminus/dotfiles.git'
   files:
-  - ackrc
-  - gitconfig
-  - vimrc
-  - zshrc
+    ackrc: '~/.ackrc'
+    gitconfig: '~/.gitconfig'
+    vimrc: '~/.vimrc'
+    zshrc: '~/.zshrc'
 
 # Manage homebrew packages
 homebrew:
