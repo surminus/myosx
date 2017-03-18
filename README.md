@@ -6,14 +6,30 @@ myosx configures osx how I like it.
 
 1. Install XCode
 2. [Install homebrew](http://brew.sh/)
-3. `brew install imagemagick`
-4. `bundle install`
+3. `bundle install`
 
 ## Usage
 
 Notes on how to test before it's a gem. Clone repo and from inside:
 
 `RUBYLIB=$(pwd)/lib bin/myosx`
+
+## Config
+
+You can set two key configs from environment variables:
+
+### Config file
+`MYOSX_CONFIG`
+
+If this isn't set then it defaults to `~/.myosx.cnf`
+
+Use the example config file to set some things (`example.myosx.cnf`)
+
+### Workspace directory
+`MYOSX_WORKSPACE`
+
+This is where everything is stored such as Brewfiles and any other repositories
+that it may pull.
 
 ## To-do
 
