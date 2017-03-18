@@ -5,11 +5,10 @@
 # This class does not add the shims path to your shell or manage any aliases
 #
 require 'yaml'
-require_relative 'core'
+require_relative 'config'
 
-class Rbenv
+class Rbenv < Config
   def initialize
-    Core.new
     @config = $global_config['rbenv']
   end
 

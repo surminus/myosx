@@ -2,11 +2,10 @@
 
 require 'yaml'
 require 'git'
-require_relative 'core'
+require_relative 'config'
 
-class Dotfiles
+class Dotfiles < Config
   def initialize
-    Core.new
     @config = $global_config['dotfiles']
   end
 
