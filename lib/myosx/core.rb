@@ -3,7 +3,6 @@
 #
 require 'yaml'
 require 'git'
-require 'fileutils'
 require_relative 'workspace'
 
 class Core

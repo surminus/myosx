@@ -2,7 +2,6 @@
 
 require 'yaml'
 require 'git'
-require 'fileutils'
 require_relative 'core'
 
 class Dotfiles
@@ -35,11 +34,11 @@ class Dotfiles
     raise "#{source_file} doesn't exist! Check your config or repo" unless File.exist?(source_file)
 
     if File.exist?(dest)
-      FileUtils.remove_file(dest)
+      File.delete(dest)
     end
 
     puts "Linking #{source_file} to #{dest}"
-    FileUtils.ln_sf(source_file, dest)
+    File.symlink(source_file, dest)
   end
 
   def exec

@@ -4,7 +4,6 @@
 #
 require 'yaml'
 require 'git'
-require 'fileutils'
 require_relative 'core'
 
 class Homebrew
