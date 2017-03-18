@@ -31,20 +31,6 @@ Use the example config file to set some things (`example.myosx.cnf`)
 This is where everything is stored such as Brewfiles and any other repositories
 that it may pull.
 
-## To-do
-
-Loads of stuff.
-
- - Create files in library for ideas on what to manage
- - Ideally the config file should be ~/.myosx.yaml or something
- - usage should be install gem, create config, `$ myosx`
- - tests
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
 ## Contributing
 
