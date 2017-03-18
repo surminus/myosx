@@ -1,16 +1,13 @@
 ---
-# This creates the named workspace directory in the users home
-workspace: '.myosx'
-
 # Manage your dotfiles
 dotfiles:
   manage: true
   repo: 'https://github.com/surminus/dotfiles.git'
   files:
-  - ackrc
-  - gitconfig
-  - vimrc
-  - zshrc
+    ackrc: '~/.ackrc'
+    gitconfig: '~/.gitconfig'
+    vimrc: '~/.vimrc'
+    zshrc: '~/.zshrc'
 
 # Manage homebrew packages
 homebrew:
