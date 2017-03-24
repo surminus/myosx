@@ -7,7 +7,8 @@ require 'git'
 require_relative 'config'
 
 class Homebrew < Config
-  def initialize
+
+  def packages
     @config = $global_config['homebrew']
   end
 
