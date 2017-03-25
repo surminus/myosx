@@ -8,8 +8,8 @@ require 'yaml'
 require_relative 'config'
 
 class Rbenv < Config
-  def initialize
-    @config = $global_config['rbenv']
+  def config
+    $global_config['rbenv']
   end
 
   def install
@@ -21,7 +21,7 @@ class Rbenv < Config
       end
     end
 
-    versions = @config['versions']
+    versions = config['versions']
     puts "Checking Ruby version:"
     versions.each do |version|
       puts "  #{version}"
@@ -30,7 +30,7 @@ class Rbenv < Config
   end
 
   def exec
-    if @config['manage']
+    if config['manage']
       install
     end
   end

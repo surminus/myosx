@@ -1,12 +1,14 @@
 #!/usr/bin/env ruby
-
+#
+# Pulls a dotfiles repo and symlinks the files where you specify
+#
 require 'yaml'
 require 'git'
 require_relative 'config'
 
 class Dotfiles < Config
-  def initialize
-    @config = $global_config['dotfiles']
+  def config
+    $global_config['dotfiles']
   end
 
   def dotfiledir
@@ -41,9 +43,9 @@ class Dotfiles < Config
   end
 
   def exec
-    if @config['manage']
-      if repo(@config['repo'])
-        @config['files'].each do |k, v|
+    if config['manage']
+      if repo(config['repo'])
+        config['files'].each do |k, v|
           link(k, v)
         end
       end

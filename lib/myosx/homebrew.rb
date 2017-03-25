@@ -8,9 +8,12 @@ require_relative 'config'
 
 class Homebrew < Config
 
+  def config
+    $global_config['homebrew']
+  end
+
   def packages
-    @config = $global_config['homebrew']
-    return @config['packages']
+    config['packages']
   end
 
   def brewfile
