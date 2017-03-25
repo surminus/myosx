@@ -8,9 +8,18 @@ module Myosx
   class Exec < Config
     def initialize
       Config.new.create_workspace
-      Dotfiles.new.exec
-      Homebrew.new.exec
-      Rbenv.new.exec
+
+      if $global_config['dotfiles']
+        Dotfiles.new.exec
+      end
+
+      if $global_config['homebrew']
+        Homebrew.new.exec
+      end
+
+      if $global_config['rbenv']
+        Rbenv.new.exec
+      end
     end
   end
 end
