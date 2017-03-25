@@ -2,6 +2,9 @@ sudo: false
 language: ruby
 rvm:
   - 2.3.3
-before_install: gem install bundler -v 1.13.6
+before_install:
+  - gem install bundler -v 1.13.6
+env:
+  - export MYOSX_CONFIG=${TRAVIS_BUILD_DIR}/spec/example.config.yaml
 os:
   - osx
