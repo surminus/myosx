@@ -1,5 +1,4 @@
-#require "spec_helper"
-require_relative "../lib/myosx/homebrew"
+require "spec_helper"
 
 global_config = YAML.load_file('spec/example.config.yaml')
 config = global_config['homebrew']
