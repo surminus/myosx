@@ -17,15 +17,11 @@ class Homebrew < Config
     return File.join($workspace, 'Brewfile')
   end
 
-  def foo(bar)
-    puts bar
-  end
-
   def brewfile_out(packages)
     output = ''
     packages.each do |type, package_array|
       package_array.each do |package|
-        output << "#{type} #{package}\n"
+        output << "#{type} '#{package}'\n"
       end
     end
     return output
@@ -40,7 +36,7 @@ class Homebrew < Config
     }
 
     puts "Installing packages from #{brewfile}"
-    system("brew bundle --file=#{brewfile}")
+    system("brew", "bundle", "--file=#{brewfile}")
   end
 
   def exec

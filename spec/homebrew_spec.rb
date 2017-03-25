@@ -7,7 +7,7 @@ packages = config['packages']
 
 describe "homebrew" do
   it "takes a list of packages and returns in Brewfile format" do
-    expect(Homebrew.new.brewfile_out(packages)).to eq("brew jimi\nbrew hendrix\ncask eric\ncask clapton\ntap bob\ntap marley\n")
+    expect(Homebrew.new.brewfile_out(packages)).to eq("brew 'jimi'\nbrew 'hendrix'\ncask 'eric'\ncask 'clapton'\ntap 'bob'\ntap 'marley'\n")
   end
 
 end
