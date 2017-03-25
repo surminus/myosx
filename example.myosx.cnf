@@ -1,7 +1,6 @@
 ---
 # Manage your dotfiles
 dotfiles:
-  manage: true
   repo: 'https://github.com/surminus/dotfiles.git'
   files:
     ackrc: '~/.ackrc'
@@ -11,7 +10,6 @@ dotfiles:
 
 # Manage homebrew packages
 homebrew:
-  manage: true
   packages:
     brew:
       - 'ack'
@@ -84,7 +82,6 @@ homebrew:
       - 'caskroom/cask'
 
 rbenv:
-  manage: true
   versions:
     - '1.9.3'
     - '1.9.3-p550'

@@ -30,8 +30,6 @@ class Rbenv < Config
   end
 
   def exec
-    if config['manage']
-      install
-    end
+    install
   end
 end

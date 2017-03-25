@@ -43,11 +43,9 @@ class Dotfiles < Config
   end
 
   def exec
-    if config['manage']
-      if repo(config['repo'])
-        config['files'].each do |k, v|
-          link(k, v)
-        end
+    if repo(config['repo'])
+      config['files'].each do |k, v|
+        link(k, v)
       end
     end
   end
