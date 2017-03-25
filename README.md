@@ -7,7 +7,8 @@ myosx configures osx how I like it.
 1. Install XCode
 2. [Install homebrew](http://brew.sh/)
 3. `gem install myosx`
-4. `$ myosx`
+4. Create a [config file](https://github.com/surminus/myosx/blob/master/example.myosx.cnf) in `~/.myosx.cnf`
+5. `$ myosx`
 
 
 ## Config
