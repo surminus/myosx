@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/surminus/myosx.svg?branch=master)](https://travis-ci.org/surminus/myosx)
+
 # Myosx
 
 myosx configures osx how I like it.
