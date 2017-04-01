@@ -8,18 +8,18 @@ require_relative 'config'
 
 class Dotfiles < Config
   def config
-    $global_config['dotfiles']
+    Config.new.global['dotfiles']
   end
 
   def dotfiledir
-    File.join($workspace, 'dotfiles')
+    File.join(Config.new.workspace_directory, 'dotfiles')
   end
 
   def repo(repo)
     if Git.ls_remote(repo)
       unless File.exist?(dotfiledir)
         puts "Cloning #{dotfile_repo}"
-        Git.clone(repo, 'dotfiles', :path => $workspace)
+        Git.clone(repo, 'dotfiles', :path => Config.new.workspace_directory)
       else
         g = Git.init(dotfiledir)
         puts "Pulling latest #{repo}"

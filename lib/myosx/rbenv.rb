@@ -9,7 +9,7 @@ require_relative 'config'
 
 class Rbenv < Config
   def config
-    $global_config['rbenv']
+    Config.new.global['rbenv']
   end
 
   def install

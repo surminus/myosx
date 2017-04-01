@@ -7,17 +7,17 @@ require "myosx/rbenv"
 module Myosx
   class Exec < Config
     def initialize
-      Config.new.create_workspace
+      Config.new.create_workspace(Config.new.workspace_directory)
 
-      if $global_config['dotfiles']
+      if Config.new.global['dotfiles']
         Dotfiles.new.exec
       end
 
-      if $global_config['homebrew']
+      if Config.new.global['homebrew']
         Homebrew.new.exec
       end
 
-      if $global_config['rbenv']
+      if Config.new.global['rbenv']
         Rbenv.new.exec
       end
     end

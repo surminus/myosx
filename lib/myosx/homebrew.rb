@@ -9,7 +9,7 @@ require_relative 'config'
 class Homebrew < Config
 
   def config
-    $global_config['homebrew']
+    Config.new.global['homebrew']
   end
 
   def packages
@@ -17,7 +17,7 @@ class Homebrew < Config
   end
 
   def brewfile
-    return File.join($workspace, 'Brewfile')
+    return File.join(Config.new.workspace_directory, 'Brewfile')
   end
 
   def brewfile_out(packages)
