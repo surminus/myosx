@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/surminus/myosx.svg?branch=master)](https://travis-ci.org/surminus/myosx)
+[![Build Status](https://travis-ci.org/surminus/myosx.svg?branch=master)](https://travis-ci.org/surminus/myosx) [![Gem Version](https://badge.fury.io/rb/myosx.svg)](https://badge.fury.io/rb/myosx)
 
 # MyOSX
 
