@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["surminus@gmail.com"]
 
   spec.summary       = %q{myosx configures OSX how I like it}
-  spec.homepage      = "https://github.com/surminus/myosx."
+  spec.homepage      = "https://github.com/surminus/myosx"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
