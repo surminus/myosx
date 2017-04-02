@@ -1,8 +1,9 @@
 [![Build Status](https://travis-ci.org/surminus/myosx.svg?branch=master)](https://travis-ci.org/surminus/myosx)
 
-# Myosx
+# MyOSX
 
-myosx configures osx how I like it.
+MyOSX configures OSX how I like it
+
 
 ## Setup
 
@@ -30,7 +31,7 @@ Use the example config file to set some things (`example.myosx.cnf`)
 `MYOSX_WORKSPACE`
 
 This is where everything is stored such as Brewfiles and any other repositories
-that it may pull. Default is '~/.myosx'
+that it may pull. Default is `~/.myosx`
 
 
 ## Contributing
