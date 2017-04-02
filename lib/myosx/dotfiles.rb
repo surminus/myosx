@@ -29,23 +29,21 @@ class Dotfiles < Config
   end
 
   def link(file, dest)
-    source_file = "#{dotfiledir}/#{file}"
-
     dest = File.expand_path(dest)
-    raise "#{source_file} doesn't exist! Check your config or repo" unless File.exist?(source_file)
+    raise "#{file} doesn't exist! Check your config or repo" unless File.exist?(file)
 
     if File.exist?(dest)
       File.delete(dest)
     end
 
-    puts "Linking #{source_file} to #{dest}"
-    File.symlink(source_file, dest)
+    puts "Linking #{file} to #{dest}"
+    File.symlink(file, dest)
   end
 
   def exec
     if repo(config['repo'])
-      config['files'].each do |k, v|
-        link(k, v)
+      config['files'].each do |file, dest|
+        link("#{dotfiledir}/#{file}", dest)
       end
     end
   end
