@@ -33,7 +33,7 @@ describe "dotfiles" do
     expect(File.exist?("#{dest_no_symlink}.#{Date.today.to_s}")).to be true
   end
 
-  let(:repo) { 'spec/stub/test_repo' }
+  let(:repo) { 'https://github.com/surminus/dotfiles.git' }
   let(:repo_target) { 'spec/stub/dotfiles' }
   it "repo should clone a repository to the target using the default repo path name of 'dotfiles'" do
     if File.exist?(repo_target)
