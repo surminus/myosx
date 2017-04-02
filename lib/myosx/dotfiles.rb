@@ -15,13 +15,13 @@ class Dotfiles < Config
     File.join(Config.new.workspace_directory, 'dotfiles')
   end
 
-  def repo(repo)
+  def repo(repo, target, local_repo = 'dotfiles')
     if Git.ls_remote(repo)
-      unless File.exist?(dotfiledir)
-        puts "Cloning #{dotfile_repo}"
-        Git.clone(repo, 'dotfiles', :path => Config.new.workspace_directory)
+      unless File.exist?(target)
+        puts "Cloning #{repo}"
+        Git.clone(repo, local_repo, :path => File.dirname(target))
       else
-        g = Git.init(dotfiledir)
+        g = Git.init(target)
         puts "Pulling latest #{repo}"
         g.pull
       end
@@ -33,6 +33,12 @@ class Dotfiles < Config
     raise "#{file} doesn't exist! Check your config or repo" unless File.exist?(file)
 
     if File.exist?(dest)
+      backup_file = "#{dest}.#{Date.today.to_s}"
+      puts "Creating backup of #{dest} called: #{backup_file}"
+      File.rename(dest, backup_file)
+    end
+
+    if File.symlink?(dest)
       File.delete(dest)
     end
 
@@ -41,7 +47,7 @@ class Dotfiles < Config
   end
 
   def exec
-    if repo(config['repo'])
+    if repo(config['repo'], dotfiledir)
       config['files'].each do |file, dest|
         link("#{dotfiledir}/#{file}", dest)
       end
