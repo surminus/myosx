@@ -32,14 +32,14 @@ class Dotfiles < Config
     dest = File.expand_path(dest)
     raise "#{file} doesn't exist! Check your config or repo" unless File.exist?(file)
 
+    if File.symlink?(dest)
+      File.delete(dest)
+    end
+
     if File.exist?(dest)
       backup_file = "#{dest}.#{Date.today.to_s}"
       puts "Creating backup of #{dest} called: #{backup_file}"
       File.rename(dest, backup_file)
-    end
-
-    if File.symlink?(dest)
-      File.delete(dest)
     end
 
     puts "Linking #{file} to #{dest}"
