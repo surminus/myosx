@@ -1,4 +1,7 @@
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require "myosx"
-require "myosx/homebrew.rb"
-require "myosx/config.rb"
+
+Dir[File.dirname(__FILE__) + '/lib/myosx/*.rb'].each {|file| require file }
+
+ENV.delete('MYOSX_WORKSPACE')
+ENV.delete('MYOSX_CONFIG')
