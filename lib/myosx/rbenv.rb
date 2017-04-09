@@ -12,7 +12,7 @@ class Rbenv < Config
     Config.new.global['rbenv']
   end
 
-  def install
+  def install_rbenv
     packages = ['rbenv', 'rbenv-aliases', 'rbenv-bundler']
     packages.each do |pkg|
       unless system("brew list #{pkg} >/dev/null 2>&1")
@@ -20,16 +20,19 @@ class Rbenv < Config
         system("brew install #{pkg}")
       end
     end
+  end
 
+  def install_rubies
     versions = config['versions']
-    puts "Checking Ruby version:"
+    puts "Ensuring Ruby version(s) installed:"
     versions.each do |version|
-      puts "  #{version}"
+      puts " - #{version}"
       system("rbenv install #{version} --skip-existing")
     end
   end
 
   def exec
-    install
+    install_rbenv
+    install_rubies
   end
 end

@@ -1,9 +1,5 @@
 require "spec_helper"
 
-global_config = YAML.load_file('spec/example.config.yaml')
-config = global_config['dotfiles']
-files = config['files']
-
 describe "dotfiles" do
   let(:file) { 'spec/stub/ackrc' }
   let(:dest) { 'spec/stub/.ackrc' }

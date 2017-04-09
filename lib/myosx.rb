@@ -9,6 +9,11 @@ module Myosx
     def initialize
       Config.new.create_workspace(Config.new.workspace_directory)
 
+      unless system("which brew >/dev/null 2>&1")
+        puts "Error: can't find homebrew in PATH."
+        exit
+      end
+
       if Config.new.global['dotfiles']
         Dotfiles.new.exec
       end

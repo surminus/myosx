@@ -1,9 +1,5 @@
 require "spec_helper"
 
-#global_config = YAML.load_file('spec/example.config.yaml')
-#config = global_config['homebrew']
-#packages = config['packages']
-
 describe "Config class" do
   describe "workspace_directory" do
     it "if the MYOSX_WORKSPACE env var is set return the full path" do
