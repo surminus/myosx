@@ -4,12 +4,12 @@
 #
 require 'yaml'
 require 'git'
-require_relative 'config'
+require_relative 'konfig'
 
-class Homebrew < Config
+class Homebrew
 
   def config
-    Config.new.global['homebrew']
+    Konfig.new.global['homebrew']
   end
 
   def packages
@@ -17,7 +17,7 @@ class Homebrew < Config
   end
 
   def brewfile
-    return File.join(Config.new.workspace_directory, 'Brewfile')
+    return File.join(Konfig.new.workspace_directory, 'Brewfile')
   end
 
   def brewfile_out(packages)

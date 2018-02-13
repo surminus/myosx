@@ -4,15 +4,16 @@
 #
 require 'yaml'
 require 'git'
-require_relative 'config'
 
-class Dotfiles < Config
+require_relative 'konfig'
+
+class Dotfiles
   def config
-    Config.new.global['dotfiles']
+    Konfig.new.global['dotfiles']
   end
 
   def dotfiledir
-    File.join(Config.new.workspace_directory, 'dotfiles')
+    File.join(Konfig.new.workspace_directory, 'dotfiles')
   end
 
   def repo(repo, target, local_repo = 'dotfiles')

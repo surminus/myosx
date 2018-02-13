@@ -1,28 +1,28 @@
 require "myosx/version"
-require "myosx/config"
+require "myosx/konfig"
 require "myosx/dotfiles"
 require "myosx/homebrew"
 require "myosx/rbenv"
 
 module Myosx
-  class Exec < Config
+  class Exec
     def initialize
-      Config.new.create_workspace(Config.new.workspace_directory)
+      Konfig.new.create_workspace(Konfig.new.workspace_directory)
 
       unless system("which brew >/dev/null 2>&1")
         puts "Error: can't find homebrew in PATH."
         exit
       end
 
-      if Config.new.global['dotfiles']
+      if Konfig.new.global['dotfiles']
         Dotfiles.new.exec
       end
 
-      if Config.new.global['homebrew']
+      if Konfig.new.global['homebrew']
         Homebrew.new.exec
       end
 
-      if Config.new.global['rbenv']
+      if Konfig.new.global['rbenv']
         Rbenv.new.exec
       end
     end

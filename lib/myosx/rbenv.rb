@@ -5,11 +5,11 @@
 # This class does not add the shims path to your shell or manage any aliases
 #
 require 'yaml'
-require_relative 'config'
+require_relative 'konfig'
 
-class Rbenv < Config
+class Rbenv
   def config
-    Config.new.global['rbenv']
+    Konfig.new.global['rbenv']
   end
 
   def install_rbenv

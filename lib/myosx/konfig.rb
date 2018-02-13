@@ -4,7 +4,7 @@
 require 'yaml'
 require 'git'
 
-class Config
+class Konfig
   def config_file
     ENV["MYOSX_CONFIG"] || File.expand_path('~/.myosx.cnf')
   end
